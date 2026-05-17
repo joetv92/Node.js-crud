@@ -1,0 +1,8 @@
+# تهيئة مشروع Node.js
+npm init -y
+
+# تثبيت الحزم الأساسية
+npm install express pg dotenv cors
+
+# تثبيت حزمة للتطوير (تعمل على إعادة التشغيل تلقائياً)
+npm install -D nodemon
