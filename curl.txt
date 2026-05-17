@@ -1,0 +1,45 @@
+# ====== المستخدمين (Users) ======
+
+# 1. إنشاء مستخدم
+curl -X POST http://localhost:3000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"username":"mohammed","email":"mohammed@test.com","password":"123456"}'
+
+# 2. جلب كل المستخدمين
+curl http://localhost:3000/api/users
+
+# 3. جلب مستخدم واحد
+curl http://localhost:3000/api/users/1
+
+# 4. تحديث مستخدم
+curl -X PUT http://localhost:3000/api/users/1 \
+  -H "Content-Type: application/json" \
+  -d '{"username":"mohammed_updated","email":"new@test.com"}'
+
+# 5. حذف مستخدم
+curl -X DELETE http://localhost:3000/api/users/1
+
+
+# ====== المنشورات (Posts) ======
+
+# 1. إنشاء منشور
+curl -X POST http://localhost:3000/api/posts \
+  -H "Content-Type: application/json" \
+  -d '{"title":"عنوان جديد","content":"محتوى المنشور هنا","user_id":1}'
+
+# 2. جلب كل المنشورات (مع JOIN على users)
+curl http://localhost:3000/api/posts
+
+# 3. جلب منشور واحد
+curl http://localhost:3000/api/posts/1
+
+# 4. جلب منشورات مستخدم معين
+curl http://localhost:3000/api/posts/user/1
+
+# 5. تحديث منشور
+curl -X PUT http://localhost:3000/api/posts/1 \
+  -H "Content-Type: application/json" \
+  -d '{"title":"عنوان محدث","content":"محتوى محدث"}'
+
+# 6. حذف منشور
+curl -X DELETE http://localhost:3000/api/posts/1
